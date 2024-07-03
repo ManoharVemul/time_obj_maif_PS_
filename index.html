@@ -43,11 +43,15 @@ for ( i of timearr){
         
        if(i[j].split(":")[1]=="00"){
         perfect=perfect+j;
-           rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1-12)+":00";
+         
        }else {
            non_perfect=non_perfect+" "+j +"\n";
           delayed=delayed+"\n"+j+"  ---->  "+(60-Number(i[j].split(":")[1]))+  "min";
-             rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1)+":00";
+           if(i[j].split(":")[0]=="12") {
+            rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1-12)+":00";
+           } else{
+            rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1)+":00";
+        }
        }
       
     }
