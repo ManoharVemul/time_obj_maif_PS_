@@ -29,7 +29,6 @@ Time4: 01:00
     </pre>
 </h1>
 
-
 <script>
 
 
@@ -43,12 +42,12 @@ for ( i of timearr){
     for(j in i){
         
        if(i[j].split(":")[1]=="00"){
-        perfect=perfect+j
+        perfect=perfect+j;
+           rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1-12)+":00";
        }else {
            non_perfect=non_perfect+" "+j +"\n";
           delayed=delayed+"\n"+j+"  ---->  "+(60-Number(i[j].split(":")[1]))+  "min";
-          rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1)+":00";
-          
+             rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1)+":00";
        }
       
     }
@@ -59,10 +58,6 @@ console.log("non_Perfect times are:    ",non_perfect);
 
 console.log("Time delayed: ",delayed)
 console.log("Time rounded: ",rounded)
-
-
-
-
 
 </script>
 
