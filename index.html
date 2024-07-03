@@ -33,22 +33,38 @@ Time4: 01:00
 <script>
 
 
+let timearr = [{Time1:"10:34"},{Time2:"12:00"},{Time3:"02:30"},{Time4:"12:45"}]
+perfect="";
+non_perfect="";
+delayed ="";
+rounded =""
+
+for ( i of timearr){
+    for(j in i){
+        
+       if(i[j].split(":")[1]=="00"){
+        perfect=perfect+j
+       }else {
+           non_perfect=non_perfect+" "+j +"\n";
+          delayed=delayed+"\n"+j+"  ---->  "+(60-Number(i[j].split(":")[1]))+  "min";
+          rounded=rounded+"\n"+j+"  ---->  "+(Number(i[j].split(":")[0])+1)+":00";
+          
+       }
+      
+    }
+}
+
+console.log("Perfect times are:    ",perfect);
+console.log("non_Perfect times are:    ",non_perfect);
+
+console.log("Time delayed: ",delayed)
+console.log("Time rounded: ",rounded)
 
 
 
-    
+
+
 </script>
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
